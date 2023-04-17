@@ -1,7 +1,6 @@
 *** Settings ***
 Resource         ../resources/commons/Base.robot
 Resource         ../resources/PageObject/PostCadastrarUsuario.robot
-# Resource         ${EXECDIR}/resources/PageObject/POST.robot
 
 Suite Setup         Conectar a minha API
 Test Setup          Criar Sessão na ServerRest 

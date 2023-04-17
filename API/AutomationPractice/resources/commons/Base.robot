@@ -14,6 +14,4 @@ Conectar a minha API
 
 Criar Sessão na ServerRest
     ${headers}        Create Dictionary    accept=application/json    Content-Type=application/json
-    Create Session    alias=ServeRest    url=${URL_API} 
-
-    
+    Create Session    alias=ServeRest    url=${URL_API}

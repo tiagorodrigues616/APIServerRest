@@ -22,10 +22,10 @@ Quando eu solicitar cadastrar um usuario
     ${body}     Create Dictionary    
     ...        nome=${NOME}
     ...        email=${EMAIL_TESTE}    
-    ...        password=123456    
+    ...        password=${PASSWORD}     
     ...        administrador=true
     Log    ${body}
-    
+
     ${resposta}    POST On Session    
     ...            alias=ServeRest
     ...            url=/usuarios
@@ -36,8 +36,9 @@ Quando eu solicitar cadastrar um usuario
     Set Test Variable    ${IDUSUARIO}    ${resposta.json()["_id"]}
     Set Test Variable    ${RESPOSTA}     ${resposta.json()}
     
-    Log     ${RESPOSTA}   
+    Log    ${RESPOSTA}   
     Log    ${IDUSUARIO}     
+    
 Então o sistema devera cadastrar um novo cenario
     Dictionary Should Contain Item    ${RESPOSTA}    message    Cadastro realizado com sucesso
     Status Should Be    201    
